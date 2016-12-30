@@ -1,0 +1,31 @@
+---
+ip: "192.168.10.102"
+memory: 2048
+cpus: 2
+provider: virtualbox
+name: timestamp
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: "."
+      to: "/timestamp"
+
+sites:
+    - map: timestamp.dev
+      to: "/timestamp/public"
+
+#ports:
+#    - send: 27017
+#      to: 27017
+
+
+# blackfire:
+#     - id: foo
+#       token: bar
+#       client-id: foo
+#       client-token: bar
+
