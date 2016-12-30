@@ -3,6 +3,9 @@
 use App\User;
 use Illuminate\Database\Seeder;
 
+/**
+ * Class UserTableSeeder
+ */
 class UserTableSeeder extends Seeder
 {
     /**
@@ -23,6 +26,10 @@ class UserTableSeeder extends Seeder
 
     }
 
+    /**
+     * Creates array of random test user
+     * @return array
+     */
     public function createTestUsers():array
     {
         $data = array();
