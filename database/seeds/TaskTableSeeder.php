@@ -15,6 +15,7 @@ class TaskTableSeeder extends Seeder
         $tasks = $this->createTestTask();
         foreach ($tasks as $index => $task) {
             $pc = new Task();
+            $pc->user_id = $task['user_id'];
             $pc->company = $task['company'];
             $pc->task = $task['task'];
             $pc->save();
@@ -27,7 +28,7 @@ class TaskTableSeeder extends Seeder
 
         for ($x = 0; $x <= 20; $x++) {
             $task = str_random(10);
-            $data[] = ['company' => $task, 'task' => $task];
+            $data[] = ['company' => $task, 'task' => $task, 'user_id' => $x+1];
         }
         return $data;
     }
