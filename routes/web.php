@@ -19,4 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/user', 'UserController@index');
-Route::resource('/tasks', 'TaskController');
+
+Route::resource('tasks', 'TaskController');
+
+Route::post('tasks/{task}/notes', 'NotesController@store');
+
+Route::resource('notes', 'NotesController');

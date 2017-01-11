@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Note;
 use App\Customer;
 use App\Task;
 use App\PublicCases;
@@ -32,6 +33,8 @@ class TaskController extends Controller
 
     public function show(Task $task)
     {
+        $task->load('notes.user');
+
         return view('tasks.show', compact('task'));
     }
 }
